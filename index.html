@@ -54,19 +54,40 @@ style="padding:15px;margin:15px;background:#00c896;color:white;border:0;border-r
 </section>
 <script>
 function prepareVideo() {
- const url = document.getElementById("videoInput").value.trim();
- const valid = /^https:\/\/(www\.)?(tiktok\.com|vt\.tiktok\.com|vm\.tiktok\.com)\//i.test(url);
- const result = document.getElementById("videoResult");
- if (!valid) {
-   result.textContent = "أدخل رابط تيك توك صحيح";
-   return;
- }
- const link = document.createElement("a");
- link.href = url;
- link.textContent = "افتح الفيديو";
- link.target = "_blank";
- link.rel = "noopener noreferrer";
- result.replaceChildren(link);
+  const url = document.getElementById("videoInput").value.trim();
+  const result = document.getElementById("videoResult");
+
+  try {
+    const u = new URL(url);
+    const host = u.hostname.toLowerCase();
+    if (!["tiktok.com", "www.tiktok.com",
+           "vt.tiktok.com", "vm.tiktok.com"].includes(host)
+        || u.protocol !== "https:") {
+      throw new Error("invalid");
+    }
+  } catch (e) {
+    result.textContent = "❌ رابط تيك توك غير صحيح";
+    return;
+  }
+
+  localStorage.setItem("promoVideo", url);
+  result.replaceChildren();
+
+  const msg = document.createElement("p");
+  msg.textContent = "✅ تم تجهيز رابط الفيديو للمشاركة";
+  result.appendChild(msg);
+
+  const btn = document.createElement("button");
+  btn.textContent = "مشاركة الفيديو";
+  btn.onclick = async () => {
+    if (navigator.share) {
+      try { await navigator.share({url}); } catch(e) {}
+    } else {
+      await navigator.clipboard.writeText(url);
+      alert("تم نسخ الرابط");
+    }
+  };
+  result.appendChild(btn);
 }
 </script>
 </body>
