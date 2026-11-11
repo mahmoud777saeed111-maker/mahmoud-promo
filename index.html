@@ -16,5 +16,29 @@ padding:16px 25px;border-radius:12px;text-decoration:none}
 <h2>@112005ms5948</h2>
 <p>اكتشف الفيديو الجديد من أسرار الروحانيات الكبرى</p>
 <a href="https://vt.tiktok.com/ZSp5M3Gyt/">شاهد الفيديو على تيك توك</a>
+
+<button id="shareVideo" onclick="shareVideo()"
+style="background:#00c896;color:white;padding:15px;
+border:0;border-radius:12px;margin-top:20px">
+مشاركة الفيديو
+</button>
+<script>
+async function shareVideo() {
+ const url = "https://vt.tiktok.com/ZSp5M3Gyt/";
+ if (navigator.share) {
+   try {
+     await navigator.share({title:"فيديو روحاني",url:url});
+   } catch(e) {}
+ } else {
+   try {
+     await navigator.clipboard.writeText(url);
+     alert("تم نسخ رابط الفيديو");
+   } catch(e) {
+     prompt("انسخ رابط الفيديو:",url);
+   }
+ }
+}
+</script>
+
 </body>
 </html>
