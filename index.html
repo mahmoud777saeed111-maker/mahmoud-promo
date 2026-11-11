@@ -40,5 +40,34 @@ async function shareVideo() {
 }
 </script>
 
+
+<section style="margin:30px auto;padding:20px;max-width:450px">
+<h2>لوحة تجهيز الفيديو</h2>
+<input id="videoInput" type="url"
+placeholder="الصق رابط فيديو تيك توك"
+style="width:90%;padding:15px;border-radius:10px">
+<button type="button" onclick="prepareVideo()"
+style="padding:15px;margin:15px;background:#00c896;color:white;border:0;border-radius:10px">
+تجهيز الترويج
+</button>
+<p id="videoResult"></p>
+</section>
+<script>
+function prepareVideo() {
+ const url = document.getElementById("videoInput").value.trim();
+ const valid = /^https:\/\/(www\.)?(tiktok\.com|vt\.tiktok\.com|vm\.tiktok\.com)\//i.test(url);
+ const result = document.getElementById("videoResult");
+ if (!valid) {
+   result.textContent = "أدخل رابط تيك توك صحيح";
+   return;
+ }
+ const link = document.createElement("a");
+ link.href = url;
+ link.textContent = "افتح الفيديو";
+ link.target = "_blank";
+ link.rel = "noopener noreferrer";
+ result.replaceChildren(link);
+}
+</script>
 </body>
 </html>
