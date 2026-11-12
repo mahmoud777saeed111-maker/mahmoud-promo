@@ -136,5 +136,58 @@ sponsored content and collaborations.</p>
 </a>
 </div>
 
+
+<!-- INTERNATIONAL SPONSORS -->
+<div class="card" id="international">
+<h2>🌍 International Sponsorships</h2>
+<p>🇺🇸 United States | 🇩🇪 Germany | 🌍 Gulf</p>
+<p>Partner with Dr Mahmoud — 178,000 TikTok followers.</p>
+<p>Brand collaborations, sponsored videos and campaigns.</p>
+<p>🇩🇪 Werbung, Kooperationen und Sponsoring.</p>
+
+<label for="intlCountry">Country / الدولة</label>
+<select id="intlCountry">
+<option>United States</option>
+<option>Germany</option>
+<option>Saudi Arabia</option>
+<option>Qatar</option>
+<option>United Arab Emirates</option>
+<option>Kuwait</option>
+<option>Bahrain</option>
+<option>Oman</option>
+<option>Other</option>
+</select>
+
+<label for="intlService">Partnership / نوع التعاون</label>
+<select id="intlService">
+<option>Paid Sponsorship</option>
+<option>Sponsored Video</option>
+<option>Brand Collaboration</option>
+<option>Voluntary TikTok Gift Support</option>
+</select>
+
+<a id="intlWhatsApp"
+href="https://wa.me/393497171588"
+target="_blank" rel="noopener noreferrer">
+🤝 Contact for Sponsorship
+</a>
+</div>
+<script>
+(function(){
+const c=document.getElementById("intlCountry");
+const t=document.getElementById("intlService");
+const a=document.getElementById("intlWhatsApp");
+function update(){
+const msg="Hello Dr Mahmoud!\nCountry: "+c.value+
+"\nInterested in: "+t.value;
+a.href="https://wa.me/393497171588?text="+
+encodeURIComponent(msg);
+}
+c.addEventListener("change",update);
+t.addEventListener("change",update);
+update();
+})();
+</script>
+
 </body>
 </html>
