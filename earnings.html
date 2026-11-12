@@ -77,5 +77,47 @@ async function shareSupport(){
 }
 </script>
 
+
+<!-- GULF CAMPAIGN -->
+<div class="card">
+<h2>🌍 Gulf Support & Sponsorship</h2>
+<p>مرحباً بالداعمين والشركات من دول الخليج</p>
+
+<label for="gulfCountry">اختر الدولة</label>
+<select id="gulfCountry">
+<option value="قطر">🇶🇦 قطر</option>
+<option value="السعودية">🇸🇦 السعودية</option>
+<option value="الإمارات">🇦🇪 الإمارات</option>
+<option value="الكويت">🇰🇼 الكويت</option>
+<option value="البحرين">🇧🇭 البحرين</option>
+<option value="عُمان">🇴🇲 عُمان</option>
+</select>
+
+<label for="gulfType">نوع التعاون</label>
+<select id="gulfType">
+<option>رعاية إعلانية مدفوعة</option>
+<option>تمويل فيديو</option>
+<option>دعم هدايا تيك توك</option>
+<option>تعاون تجاري</option>
+</select>
+
+<a href="#" onclick="sendGulf(event)">
+📩 إرسال عرض الدعم أو الرعاية
+</a>
+</div>
+
+<script>
+function sendGulf(e){
+ e.preventDefault();
+ const country=document.getElementById("gulfCountry").value;
+ const type=document.getElementById("gulfType").value;
+ const msg="مرحباً دكتور محمود، أريد التواصل بخصوص:
+"
+ +type+"\nالدولة: "+country;
+ window.location.href=
+ "https://wa.me/393497171588?text="+encodeURIComponent(msg);
+}
+</script>
+
 </body>
 </html>
