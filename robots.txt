@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mahmoud777saeed111-maker.github.io/mahmoud-promo/sitemap.xml
