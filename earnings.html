@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>الدكتور محمود | الدعم والأرباح</title>
+<style>
+body{background:#101018;color:white;font-family:Arial;text-align:center;padding:20px}
+h1{color:#ffd700}
+.card{background:#222235;padding:22px;border-radius:16px;margin:18px auto;max-width:520px}
+a{display:block;background:#25D366;color:white;padding:15px;border-radius:12px;margin-top:15px;text-decoration:none;font-weight:bold}
+select{width:100%;padding:14px;border-radius:10px;font-size:16px}
+p{line-height:1.7}
+</style>
+</head>
+<body>
+<h1>الدكتور محمود الروحاني</h1>
+<p>Support & Sponsorship Center</p>
+
+<div class="card">
+<h2>🎁 دعم العملات والهدايا</h2>
+<p>هدف الدعم الطوعي: 500,000 TikTok Coins</p>
+<p>Voluntary support through official available methods only.</p>
+</div>
+
+<div class="card">
+<h2>💰 الرعايات وتحقيق الأرباح</h2>
+<p>فرص التعاون والإعلانات المدفوعة مع الشركات.</p>
+<p>Paid sponsorships and brand collaborations.</p>
+</div>
+
+<div class="card">
+<h2>📩 تقديم طلب دعم أو رعاية</h2>
+<select id="type">
+<option>عرض دعم العملات</option>
+<option>عرض هدايا تيك توك</option>
+<option>تمويل ترويج فيديو</option>
+<option>رعاية إعلانية مدفوعة</option>
+<option>تعاون تجاري</option>
+</select>
+<a href="#" onclick="sendRequest(event)">إرسال الطلب عبر واتساب أعمال</a>
+</div>
+
+<a href="https://www.tiktok.com/@112005ms5948">زيارة حساب تيك توك الرسمي</a>
+
+<script>
+function sendRequest(e){
+ e.preventDefault();
+ const type=document.getElementById("type").value;
+ const msg="مرحباً دكتور محمود، أريد تقديم طلب: "+type+
+ "\nTikTok: @112005ms5948";
+ location.href="https://wa.me/393497171588?text="+encodeURIComponent(msg);
+}
+</script>
+</body>
+</html>
