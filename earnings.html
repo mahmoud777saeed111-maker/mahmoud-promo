@@ -52,5 +52,30 @@ function sendRequest(e){
  location.href="https://wa.me/393497171588?text="+encodeURIComponent(msg);
 }
 </script>
+
+<!-- SHARE SUPPORT PAGE -->
+<div class="card">
+<h2>🌍 ساعدنا نوصل للداعمين والرعاة</h2>
+<p>Share our support and sponsorship page</p>
+<button onclick="shareSupport()" style="background:#ffd700;color:#111;border:0;border-radius:12px;padding:16px;width:100%;font-size:18px;font-weight:bold">
+🔗 مشاركة صفحة الدعم والرعايات
+</button>
+</div>
+<script>
+async function shareSupport(){
+ const url=location.href;
+ const title="Support Dr Mahmoud | Sponsorship & TikTok Gifts";
+ if(navigator.share){
+   try {await navigator.share({title,url});}
+   catch(e) {if(e.name!=="AbortError") alert(url);}
+ }else if(navigator.clipboard && window.isSecureContext){
+   try {await navigator.clipboard.writeText(url);alert("تم نسخ الرابط");}
+   catch(e){prompt("انسخ الرابط:",url);}
+ }else{
+   prompt("انسخ الرابط:",url);
+ }
+}
+</script>
+
 </body>
 </html>
