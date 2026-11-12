@@ -25,18 +25,63 @@ p{line-height:1.8}
 <p>لا نطلب كلمات مرور أو أكواد تحقق أو بيانات دفع.</p>
 </div>
 
-<a href="https://wa.me/393497171588?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D9%85%D8%AD%D9%85%D9%88%D8%AF%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%AA%D9%82%D8%AF%D9%8A%D9%85%20%D8%B7%D9%84%D8%A8%20%D8%AF%D8%B9%D9%85%20%D8%A3%D9%88%20%D8%AA%D9%85%D9%88%D9%8A%D9%84%20%D9%84%D8%AD%D8%B3%D8%A7%D8%A8%D9%83%20%D8%B9%D9%84%D9%89%20%D8%AA%D9%8A%D9%83%20%D8%AA%D9%88%D9%83." target="_blank" rel="noopener noreferrer"
-style="background:#25D366;color:#fff">
-💚 تقديم طلب دعم عبر واتساب أعمال
-</a>
 
 
-<div id="whatsapp-support" style="text-align:center;margin:30px 10px">
-<a href="https://wa.me/393497171588?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D9%85%D8%AD%D9%85%D9%88%D8%AF%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%AA%D9%82%D8%AF%D9%8A%D9%85%20%D8%B7%D9%84%D8%A8%20%D8%AF%D8%B9%D9%85%20%D9%84%D8%AD%D8%B3%D8%A7%D8%A8%D9%83%20%D8%B9%D9%84%D9%89%20%D8%AA%D9%8A%D9%83%20%D8%AA%D9%88%D9%83%20%40112005ms5948" target="_blank" rel="noopener"
-style="display:inline-block;background:#25D366;color:white;padding:18px;border-radius:14px;text-decoration:none;font-size:20px">
-💚 تقديم طلب دعم عبر واتساب أعمال
-</a>
-</div>
+
+
+
+
+<section id="support-requests" dir="rtl"
+style="max-width:580px;margin:30px auto;padding:24px;
+background:#242333;color:white;border-radius:18px;
+text-align:center;font-family:Arial">
+
+<h2>💚 ادعم الدكتور محمود</h2>
+<p>Support Dr Mahmoud</p>
+
+<p>اختر نوع الدعم | Choose support type</p>
+
+<select id="supportType"
+style="width:100%;padding:15px;border-radius:10px;
+font-size:17px;margin-bottom:20px">
+<option value="تمويل حملة ترويج">
+تمويل حملة ترويج | Sponsor promotion
+</option>
+<option value="دعم وهدايا عبر تيك توك">
+دعم وهدايا | TikTok gifts
+</option>
+<option value="عرض رعاية أو تعاون">
+رعاية أو تعاون | Sponsorship
+</option>
+</select>
+
+<button onclick="sendSupportRequest()"
+style="background:#25D366;color:white;border:0;
+padding:18px;border-radius:12px;font-size:19px;
+width:100%;cursor:pointer">
+💚 تقديم طلب الدعم عبر واتساب
+</button>
+
+<p style="font-size:13px;margin-top:20px">
+الدعم اختياري، ولا نطلب كلمات مرور أو بيانات دفع.
+</p>
+</section>
+
+<script>
+function sendSupportRequest() {
+  const type = document.getElementById("supportType").value;
+  const message =
+    "مرحباً دكتور محمود، أريد تقديم طلب دعم.\n" +
+    "نوع الطلب: " + type + "\n" +
+    "حساب تيك توك: @112005ms5948";
+
+  window.open(
+    "https://wa.me/393497171588?text=" +
+    encodeURIComponent(message),
+    "_blank"
+  );
+}
+</script>
 
 </body>
 </html>
