@@ -107,15 +107,15 @@ async function shareSupport(){
 </div>
 
 <script>
-function sendGulf(e){
- e.preventDefault();
- const country=document.getElementById("gulfCountry").value;
- const type=document.getElementById("gulfType").value;
- const msg="مرحباً دكتور محمود، أريد التواصل بخصوص:
-"
- +type+"\nالدولة: "+country;
- window.location.href=
- "https://wa.me/393497171588?text="+encodeURIComponent(msg);
+function sendGulf(e) {
+  e.preventDefault();
+  const country = document.getElementById("gulfCountry").value;
+  const type = document.getElementById("gulfType").value;
+  const msg = "مرحباً دكتور محمود، أريد تقديم عرض: "
+    + type + "\\nالدولة: " + country;
+  const url = "https://wa.me/393497171588?text="
+    + encodeURIComponent(msg);
+  window.location.assign(url);
 }
 </script>
 
